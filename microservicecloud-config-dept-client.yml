@@ -11,7 +11,7 @@ spring:
     name: microservicecloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: oracle.jdbc.driver.OracleDriver              # mysql驱动包
+    driver-class-name: oracle.jdbc.driver.OracleDriver              # oracle驱动包
     url: jdbc:oracle:thin:@127.0.0.1:1521:orcl              # 数据库名称
     username: admin
     password: 123456
