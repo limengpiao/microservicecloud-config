@@ -1,13 +1,13 @@
-﻿spring: 
+﻿spring:
   profiles:
     active:
-    - dev
---- 
+    - test
+---
 server:
   port: 8001
-spring: 
-   profiles: dev
-   application: 
+spring:
+  profiles: dev
+  application:
     name: microservicecloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
@@ -21,23 +21,19 @@ spring:
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.atguigu.springcloud.entities
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml
- 
-eureka: 
+
+eureka:
   client: #客户端注册进eureka服务列表内
-    service-url: 
+    service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-    register-with-eureka: false
-    fetch-registry: false
   instance:
-    instance-id: dept-8001.com
+    instance-id: dept-8001.com222222
     prefer-ip-address: true
-    lease-expiration-duration-in-seconds: 2
-    lease-renewal-interval-in-seconds: 1
- 
+
 info:
   app.name: atguigu-microservicecloud-springcloudconfig01
   company.name: www.atguigu.com
@@ -46,9 +42,9 @@ info:
 ---
 server:
   port: 8001
-spring: 
-   profiles: test
-   application: 
+spring:
+  profiles: test
+  application:
     name: microservicecloud-config-dept-client
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
@@ -61,26 +57,24 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-  
+
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.atguigu.springcloud.entities
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml
- 
-eureka: 
+
+eureka:
   client: #客户端注册进eureka服务列表内
-    service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka
-    register-with-eureka: false
-    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true
- 
+
 info:
   app.name: atguigu-microservicecloud-springcloudconfig02
   company.name: www.atguigu.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-#请保存为UTF-8格式
